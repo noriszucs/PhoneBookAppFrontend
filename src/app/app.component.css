@@ -1,0 +1,16 @@
+.example-container {
+  width: 100%;
+  height: 100vh;   
+}
+
+.content {
+  height: 100%;
+}
+
+.content {
+  background: lightblue;
+}
+
+.output {
+  color: black,
+}
