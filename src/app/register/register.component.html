@@ -1,1 +1,74 @@
-<p>register works!</p>
+<div class="main-div">
+  <h2>Sign Up Page</h2>
+  <form class="example-form" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+    <mat-form-field class="example-full-width">
+      <input
+        id="firstName"
+        name="firstName"
+        ngModel
+        required
+        matInput
+        placeholder="firstName"
+        type="text">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input
+        id="lastName"
+        name="lastName"
+        ngModel
+        required
+        matInput
+        placeholder="lastName"
+        type="text">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input
+        id="username"
+        name="username"
+        ngModel
+        required
+        matInput
+        placeholder="username"
+        type="text">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input
+        id="password"
+        name="password"
+        ngModel
+        required  
+        matInput
+        placeholder="password"
+        type="password">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input
+        id="email"
+        name="email"
+        ngModel
+        required
+        matInput
+        placeholder="email"
+        type="email">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input
+        id="birthDate"
+        name="birthDate"
+        ngModel
+        required
+        matInput
+        placeholder="birthDate"
+        type="date">
+    </mat-form-field>
+    <button
+      mat-raised-button color="accent"
+      type="submit"
+      [disabled]="!authForm.valid"
+      >Sign up</button>
+  </form>
+</div>
+<button
+  mat-raised-button color="accent"
+  routerLink="."
+  >Back</button>

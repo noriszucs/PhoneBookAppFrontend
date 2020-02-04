@@ -39,7 +39,7 @@ export class AuthService {
     );
   }
 
-  register(username: string, password: string, email: string, firstName: string, lastName: string, birthDate: string, role: string) {
+  register(firstName: string, lastName: string, username: string, password: string, email: string, birthDate: string) {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
@@ -50,7 +50,6 @@ export class AuthService {
       'password': password,
       'email': email,
       'birthDate': birthDate,
-      'role': role
     }
     return this.http.post(
       'http://localhost:8080/api/register', body, {headers: headers}
@@ -59,7 +58,7 @@ export class AuthService {
 
   logout() {
     this.token.next(null);
-    this.router.navigate(['/login']);
+    this.router.navigate(['']);
     localStorage.removeItem('tokenData');
   }
 

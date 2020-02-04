@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { AuthService } from '../auth/auth.service';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -7,7 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) { }
+
+  onSubmit(form: NgForm) {
+    const firstName = form.value.firstName;
+    const lastName = form.value.lastName;
+    const username = form.value.username;
+    const password = form.value.password;
+    const email = form.value.email;
+    const birthDate = form.value.birthDate;
+    console.log(firstName, lastName, username, email, birthDate);
+
+    let authObservable: Observable<any>;
+
+    // tslint:disable-next-line: max-line-length
+    authObservable = this.authService.register(firstName, lastName, username, password, email, birthDate);
+
+    authObservable.subscribe(resData => {
+      console.log(resData);
+      this.router.navigate(['/mycontacts']);
+    }, error => {
+      console.log(error);
+    });
+  }
 
   ngOnInit() {
   }

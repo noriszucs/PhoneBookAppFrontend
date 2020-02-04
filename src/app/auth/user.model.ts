@@ -5,9 +5,7 @@ export class User {
     public firstName: string,
     public lastName: string,
     public email: string,
-    public address: string,
-    public birthDate: string,
+    public birthDate: Date,
     public role: string
-    //public phoneNumbers: PhoneNumbers[]
   ) {}
 }
