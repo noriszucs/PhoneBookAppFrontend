@@ -29,7 +29,7 @@ export class UserService {
   }
 
   getUsers() {
-    return this.users.slice();
+    return this.http.get<any>('http://localhost:8080/api/users');
   }
 
 }

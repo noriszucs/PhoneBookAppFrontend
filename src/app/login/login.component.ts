@@ -30,6 +30,10 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  backHome() {
+    this.router.navigate(['']);
+  }
+
   ngOnInit() {
   }
 

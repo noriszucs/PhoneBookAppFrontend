@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from '../service/contact.service';
+import { Contact } from '../model/contact';
 
 @Component({
   selector: 'app-mycontacts',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MycontactsComponent implements OnInit {
 
-  constructor() { }
+  contacts: Contact[];
+  displayedColumns: string[] = ['name', 'countryCode', 'areaCode', 'number', 'phoneType', 'group'];
+
+  constructor(private contactService: ContactService) { }
 
   ngOnInit() {
+    this.contactService.findMyContact().subscribe(data => {
+      this.contacts = data;
+    });
   }
 
 }

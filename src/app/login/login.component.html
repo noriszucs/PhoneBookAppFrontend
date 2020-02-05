@@ -123,9 +123,12 @@
       type="submit"
       [disabled]="!authForm.valid"
       >Login</button>
+      <br>
+      <button class="button"
+      mat-raised-button color="accent"
+      (click)="backHome()"
+      >HomePage
+</button>
   </form>
 </div>
-<button
-      mat-raised-button color="accent"
-      routerLink="."
-      >HomePage</button>
+

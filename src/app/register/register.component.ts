@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -33,6 +33,10 @@ export class RegisterComponent implements OnInit {
     }, error => {
       console.log(error);
     });
+  }
+
+  backHome() {
+    this.router.navigate(['']);
   }
 
   ngOnInit() {

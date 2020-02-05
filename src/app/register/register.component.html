@@ -66,9 +66,10 @@
       type="submit"
       [disabled]="!authForm.valid"
       >Sign up</button>
+      <br>
+      <button class="button"
+  mat-raised-button color="accent"
+  (click)="backHome()"
+  >HomePage</button>
   </form>
 </div>
-<button
-  mat-raised-button color="accent"
-  routerLink="."
-  >Back</button>

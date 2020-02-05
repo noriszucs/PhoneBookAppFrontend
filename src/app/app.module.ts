@@ -13,6 +13,7 @@ import { MaterialModule } from './material/material';
 import { MycontactsComponent } from './mycontacts/mycontacts.component';
 import { LandingComponent } from './landing/landing.component';
 import { RegisterComponent } from './register/register.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     MycontactsComponent,
     LandingComponent,
-    RegisterComponent
+    RegisterComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
