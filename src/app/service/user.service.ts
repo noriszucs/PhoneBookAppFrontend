@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 
 import { User } from '../auth/user.model';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { tap, map } from 'rxjs/operators';
 
 @Injectable({providedIn:'root'})
+
 export class UserService {
   usersChanged = new Subject<User[]>();
   private users: User[] = [];
@@ -30,6 +31,10 @@ export class UserService {
 
   getUsers() {
     return this.http.get<any>('http://localhost:8080/api/users');
+  }
+
+  findMe(): Observable<any> {
+    return this.http.get('//localhost:8080/api/me');
   }
 
 }

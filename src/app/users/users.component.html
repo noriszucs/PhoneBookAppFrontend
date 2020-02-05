@@ -1,1 +1,27 @@
-<p>users works!</p>
+<div class="place">
+
+  <h1>My Profile</h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <ul>
+          <li><h4 class="pb-2">First name: {{user.firstName}}</h4></li>
+          <li><h4 class="pb-2">Last name: {{user.lastName}}</h4></li>
+          <li><h4 class="pb-2">Username: {{user.username}}</h4></li>
+          <li><h4 class="pb-2">E-mail: {{user.email}}</h4></li>
+          <li><h4 class="pb-2">Date of birth: {{user.birthDate | date:'dd/MM/yyyy'}}</h4></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <button class="button"
+  mat-raised-button color="accent"
+  (click)="editProfile()"
+  >Edit profile</button>
+  <button class="button"
+  mat-raised-button color="accent"
+  (click)="deleteAccount()"
+  >Delete Account</button>
+
+</div>

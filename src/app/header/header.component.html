@@ -1,7 +1,9 @@
 <mat-toolbar color="warm" class="navbar">
   <div>
     PhoneBook Application</div>
-    <div class="buttons">
-    <button mat-raised-button color="accent" *ngIf="isAuthenticated" (click)="onLogout()">Logout</button>
+    <div>
+      <button class="buttons" mat-raised-button color="accent" *ngIf="isAuthenticated" (click)="mycontacts()">Contacts</button>
+      <button class="buttons" mat-raised-button color="accent" *ngIf="isAuthenticated" (click)="myprofil()">My profile</button>
+      <button mat-raised-button color="accent" *ngIf="isAuthenticated" (click)="onLogout()">Logout</button>
   </div>
 </mat-toolbar>

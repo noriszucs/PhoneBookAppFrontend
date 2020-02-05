@@ -5,6 +5,7 @@ import { AuthGuard } from './auth/auth-guard';
 import { MycontactsComponent } from './mycontacts/mycontacts.component';
 import { LandingComponent } from './landing/landing.component';
 import { RegisterComponent } from './register/register.component';
+import { UsersComponent } from './users/users.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent  },
   { path: 'mycontacts', component: MycontactsComponent, canActivate: [AuthGuard]  },
+  { path: 'myprofile', component: UsersComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

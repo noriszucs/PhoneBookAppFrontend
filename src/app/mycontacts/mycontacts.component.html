@@ -1,7 +1,25 @@
-<h1>Contacts:</h1>
-
+<h1 class="text">Contacts:</h1>
 
 <body>
+  <div class="buttonPlace">
+  <button class="button"
+      mat-raised-button color="accent"
+      (click)="addNew()"
+      >Add new
+  </button>
+
+  <button class="button"
+      mat-raised-button color="accent"
+      (click)="edit()"
+      >Edit
+  </button>
+
+  <button class="button"
+      mat-raised-button color="accent"
+      (click)="delete()"
+      >Delete
+  </button>
+</div>
 
 <table mat-table [dataSource]="contacts">
 
