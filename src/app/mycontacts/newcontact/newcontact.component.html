@@ -1,0 +1,66 @@
+<h1>Create new contact</h1>
+<div class="main-div">
+  <form class="example-form" #authForm="ngForm" (ngSubmit)="save(authForm)">
+    <mat-form-field class="example-full-width">
+      Name<input
+        id="name"
+        name="name"
+        ngModel
+        required
+        matInput
+        type="text">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      Country Code<input
+        id="countryCode"
+        name="countryCode"
+        ngModel
+        required
+        matInput
+        type="text">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      Area Code<input
+        id="areaCode"
+        name="areaCode"
+        ngModel
+        required
+        matInput
+        type="text">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      Number<input
+        id="number"
+        name="number"
+        ngModel
+        required
+        matInput
+        type="text">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Type</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let type of types" [value]="type.value">
+          {{type.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Group</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let group of groups" [value]="group.value">
+          {{group.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button class="button"
+      mat-raised-button color="accent"
+      type="submit"
+      [disabled]="!authForm.valid"
+      >Save</button>
+      <button
+      mat-raised-button color="accent"
+      (click)="cancel()"
+      >Cancel</button>
+  </form>
+</div>

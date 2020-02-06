@@ -6,6 +6,7 @@ import { MycontactsComponent } from './mycontacts/mycontacts.component';
 import { LandingComponent } from './landing/landing.component';
 import { RegisterComponent } from './register/register.component';
 import { UsersComponent } from './users/users.component';
+import { NewcontactComponent } from './mycontacts/newcontact/newcontact.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent  },
   { path: 'mycontacts', component: MycontactsComponent, canActivate: [AuthGuard]  },
-  { path: 'myprofile', component: UsersComponent, canActivate: [AuthGuard] }
+  { path: 'myprofile', component: UsersComponent, canActivate: [AuthGuard] },
+  { path: 'newcontact', component: NewcontactComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

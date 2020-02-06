@@ -14,6 +14,7 @@ import { MycontactsComponent } from './mycontacts/mycontacts.component';
 import { LandingComponent } from './landing/landing.component';
 import { RegisterComponent } from './register/register.component';
 import { UsersComponent } from './users/users.component';
+import { NewcontactComponent } from './mycontacts/newcontact/newcontact.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UsersComponent } from './users/users.component';
     MycontactsComponent,
     LandingComponent,
     RegisterComponent,
-    UsersComponent
+    UsersComponent,
+    NewcontactComponent
   ],
   imports: [
     BrowserModule,
