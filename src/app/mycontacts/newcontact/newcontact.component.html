@@ -8,6 +8,7 @@
         ngModel
         required
         matInput
+        autocomplete="off"
         type="text">
     </mat-form-field>
     <mat-form-field class="example-full-width">
@@ -35,20 +36,21 @@
         ngModel
         required
         matInput
+        autocomplete="off"
         type="text">
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Type</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let type of types" [value]="type.value">
+      <mat-select  name="phoneType" [(ngModel)]="selectedType">
+        <mat-option *ngFor="let type of types" [value]="type.id">
           {{type.viewValue}}
         </mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Group</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let group of groups" [value]="group.value">
+      <mat-select name="group" [(ngModel)]="selectedGroup">
+        <mat-option *ngFor="let group of groups" [value]="group.id">
           {{group.viewValue}}
         </mat-option>
       </mat-select>

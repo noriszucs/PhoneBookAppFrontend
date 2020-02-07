@@ -18,21 +18,24 @@ export class NewcontactComponent implements OnInit {
 
   user: User;
   contact: Contact;
-  selectedItem: string;
 
-  types: any[] = [
-    {value: 'home-0', viewValue: 'HOME'},
-    {value: 'work-1', viewValue: 'WORK'},
-    {value: 'mobil-2', viewValue: 'MOBIL'}
+  public types = [
+    {id: 0, viewValue: 'NONE'},
+    {id: 1, viewValue: 'MOBIL'},
+    {id: 2, viewValue: 'WORK'},
+    {id: 3, viewValue: 'HOME'}
   ];
+  public selectedType = this.types[0].id;
 
-  groups: any[] = [
-    {value: 'family-0', viewValue: 'FAMILY'},
-    {value: 'relative-1', viewValue: 'RELATIVE'},
-    {value: 'friend-2', viewValue: 'FRIEND'},
-    {value: 'coworker-3', viewValue: 'COWORKER'},
-    {value: 'acquaintance-4', viewValue: 'ACQUAINTANCE'}
+  public groups = [
+    {id: 0, viewValue: 'NONE'},
+    {id: 1, viewValue: 'FAMILY'},
+    {id: 2, viewValue: 'RELATIVE'},
+    {id: 3, viewValue: 'FRIEND'},
+    {id: 4, viewValue: 'COWORKER'},
+    {id: 5, viewValue: 'ACQUAINTANCE'}
   ];
+  public selectedGroup = this.groups[0].id;
   
   // tslint:disable-next-line: max-line-length
   constructor(private http: HttpClient, private userService: UserService, private contactService: ContactService, private router: Router) { }
@@ -60,7 +63,7 @@ export class NewcontactComponent implements OnInit {
 
       this.router.navigate(['/mycontacts']);
     }, error => {
-      alert('Something went wrong! Please try again.')
+      alert('Something went wrong! Please try again.');
       console.log(error);
     });
   }
@@ -68,7 +71,5 @@ export class NewcontactComponent implements OnInit {
   cancel() {
     this.router.navigate(['/mycontacts']);
   }
-
-  
 
 }

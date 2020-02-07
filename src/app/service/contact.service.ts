@@ -21,4 +21,12 @@ export class ContactService {
     })
   });
   }
+
+  deleteById(id: number) {
+    return this.http.delete<any>(`http://localhost:8080/api/contact/id/${id}`);
+  }
+
+  deleteByName(name: string) {
+    return this.http.delete<any>((`http://localhost:8080/api/contact/name/${name}`));
+  }
 }
